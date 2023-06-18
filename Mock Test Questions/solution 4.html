@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocktest</title>
+</head>
+<body>
+    
+<script>
+
+            function firstUniqChar(s) {
+            let frequency = {};
+
+            // Count the frequency of each character in the string
+            for (let i = 0; i < s.length; i++) {
+                if (frequency.hasOwnProperty(s[i])) {
+                frequency[s[i]]++;
+                } else {
+                frequency[s[i]] = 1;
+                }
+            }
+
+            // Find the first character with a frequency of 1
+            for (let i = 0; i < s.length; i++) {
+                if (frequency[s[i]] === 1) {
+                    document.write(i);
+                return i;
+                }
+            }
+
+            // If no unique character is found, return -1
+            return -1;
+            }
+
+            // to test the function 
+            console.log(firstUniqChar("leetcode"));       // Output: 0
+            console.log(firstUniqChar("loveleetcode"));   // Output: 2
+            console.log(firstUniqChar("aabb"));           // Output: -1
+
+</script>
+</body>
+</html>
